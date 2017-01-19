@@ -37,7 +37,7 @@ else:
     else:
         str_out_1 = "#[bg=%s] #[fg=black]%s | %s #[fg=default]#[bg=default]" % (temp_col,detailed.title(),round(cur_temp,1))
 
-    file = open("/home/vagrant/openweathermap.1", "w")
+    file = open("/Users/dbelis/openweathermap.1", "w")
     file.write( str_out_1 )
     file.close()
 

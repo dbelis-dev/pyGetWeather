@@ -24,7 +24,7 @@ else:
     else:
         str_out_3 = "#[bg=yellow] #[fg=white]%s#[fg=black]/#[fg=white]%s#[fg=black]/#[fg=white]%s#[fg=black]/#[fg=white]%s #[fg=default]#[bg=default]" % (tomorrow_morning_forecast, tomorrow_noon_forecast, tomorrow_evening_forecast, tomorrow_night_forecast)
 
-    file = open("/home/vagrant/openweathermap.3", "w")
+    file = open("/Users/dbelis/openweathermap.3", "w")
     file.write( str_out_3 )
     file.close()
 

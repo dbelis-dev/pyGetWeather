@@ -24,7 +24,7 @@ else:
             str_out_2 += "/"
         str_out_2 += " #[fg=default]#[bg=default]"
 
-    file = open("/home/vagrant/openweathermap.2", "w")
+    file = open("/Users/dbelis/openweathermap.2", "w")
     file.write( str_out_2 )
     file.close()
 
