@@ -22,9 +22,11 @@ else:
     if raised_exc == -1:
         str_out_3 = "#[bg=%s] #[fg=white][%s] #[fg=default]#[bg=default]" % ('black', 'N/A')
     else:
-        str_out_3 = "#[bg=yellow] #[fg=white]%s#[fg=black]/#[fg=white]%s#[fg=black]/#[fg=white]%s#[fg=black]/#[fg=white]%s #[fg=default]#[bg=default]" % (tomorrow_morning_forecast, tomorrow_noon_forecast, tomorrow_evening_forecast, tomorrow_night_forecast)
+        str_out_3_pre = "#[bg=green]#[fg=black]" 
+        str_out_3 = "%s | %s | %s | %s" % (tomorrow_morning_forecast, tomorrow_noon_forecast, tomorrow_evening_forecast, tomorrow_night_forecast)
+        str_out_3_post = "#[fg=default]#[bg=default]"
 
     file = open("/Users/dbelis/openweathermap.3", "w")
-    file.write( str_out_3 )
+    file.write( str_out_3_pre + str_out_3.center(35) + str_out_3_post )
     file.close()
 

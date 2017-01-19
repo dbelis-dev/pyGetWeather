@@ -35,9 +35,11 @@ else:
     if raised_exc == -1:
         str_out_1 = "#[bg=%s] #[fg=white][%s] #[fg=default]#[bg=default]" % ('black', 'N/A')
     else:
-        str_out_1 = "#[bg=%s] #[fg=black]%s | %s #[fg=default]#[bg=default]" % (temp_col,detailed.title(),round(cur_temp,1))
+        str_out_1_pre = "#[bg=%s]#[fg=black]" % (temp_col)
+        str_out_1 = "%s | %s" % (detailed.title(),round(cur_temp,1))
+        str_out_1_post = "#[fg=default]#[bg=default]"
 
     file = open("/Users/dbelis/openweathermap.1", "w")
-    file.write( str_out_1 )
+    file.write( str_out_1_pre + str_out_1.center(35) + str_out_1_post )
     file.close()
 
