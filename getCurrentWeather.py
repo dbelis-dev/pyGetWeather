@@ -11,6 +11,7 @@ owm = pyowm.OWM('b3362437408e57646f5c22fe4e576f8e')
 try:
     observation = owm.weather_at_place("Sheffield,uk")
     current_weather = observation.get_weather()
+    location = observation.get_location().get_name().title()
 except:
     raised_exc = -1
 else:
@@ -30,7 +31,7 @@ else:
         str_out_1 = "#[bg=%s] #[fg=white][%s] #[fg=default]#[bg=default]" % ('black', 'N/A')
     else:
         str_out_1_pre = "#[bg=%s]#[fg=black]" % (temp_col)
-        str_out_1 = "%s | %s" % (detailed.title(),round(cur_temp,1))
+        str_out_1 = "%s: %s | %sC" % (location, detailed.title(),int(round(cur_temp)))
         str_out_1_post = "#[fg=default]#[bg=default]"
 
     file = open("/Users/dbelis/openweathermap.1", "w")
