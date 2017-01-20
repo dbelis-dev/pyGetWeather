@@ -13,6 +13,7 @@ try:
     multiday_forecast = multiday_forecasts.get_forecast()
 except:
     raised_exc = -1
+    #print("Unexpected error:", sys.exc_info()[0])
 else:
     for weather in multiday_forecast:
         ## skip today's forecast
@@ -29,7 +30,7 @@ else:
         str_out_3 = "#[bg=%s] #[fg=white][%s] #[fg=default]#[bg=default]" % ('black', 'N/A')
     else:
         str_out_3_pre = "#[bg=yellow]#[fg=black]"
-        str_out_3 = "%s [%s / %s]" % (detail_fc.title(), round(min_temp,1), round(max_temp,1))
+        str_out_3 = "%s [%s / %s]" % (detail_fc.title(), int(round(min_temp)), int(round(max_temp)))
         str_out_3_post = "#[fg=default]#[bg=default]"
 
     file = open("/Users/dbelis/openweathermap.3", "w")
