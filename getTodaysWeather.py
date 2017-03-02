@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#! /usr/local/bin/python
 
 import pyowm
 from datetime import date
@@ -13,9 +13,10 @@ try:
     f3 = forecast.get_forecast()
 except:
     raised_exc = -1
+    print ('Failed to update!')
 else:
     if raised_exc == -1:
-        str_out_2 = "#[bg=%s] #[fg=white][%s] #[fg=default]#[bg=default]" % ('black', 'N/A')
+        str_out_2 = "#[bg=%s] #[fg=white][%s]#[fg=default]#[bg=default]" % ('black', 'N/A'.center(35))
     else:
         str_out_2_pre = "#[bg=cyan]#[fg=black]"
         pos = 0
@@ -28,8 +29,10 @@ else:
             pos += 1
             str_out_2 += ", "
         str_out_2_post = "#[fg=default]#[bg=default]"
+        print ('Updated successfully!')
 
     file = open("/Users/dbelis/openweathermap.2", "w")
     file.write( str_out_2_pre + str_out_2.center(35) + str_out_2_post )
     file.close()
+
 
