@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#! /usr/bin/env python
 
 import pyowm
 
@@ -31,11 +31,11 @@ try:
         else:
             temp_col = 'cyan'
 
-    file = open("/home/vagrant/openweathermap.out", "w")
+    file = open("./openweathermap.out", "w")
     file.write("#[bg=%s] #[fg=white][%s] %s#[fg=black] | %s/%s #[fg=default]#[bg=default]" % (temp_col,short,round(cur_temp,1),round(min_temp),round(max_temp)))
     file.close()
 except:
-    file = open("/home/vagrant/openweathermap.out", "w")
+    file = open("./openweathermap.out", "w")
     file.write("#[bg=%s] #[fg=white][%s] #[fg=default]#[bg=default]" % ('black', 'N/A'))
     file.close()
  
